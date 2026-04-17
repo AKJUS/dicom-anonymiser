@@ -779,8 +779,8 @@ function nmImageModulePolicy(): IPolicy {
 
 function nmIsotopeModulePolicy(): IPolicy {
   return {
-    "00540012": { action: "remove", description: "Scan Velocity" },
-    "00540016": { action: "remove", description: "Scan Length" },
+    "00540012": { action: "remove", description: "Energy Window Information Sequence" },
+    "00540016": { action: "remove", description: "Radiopharmaceutical Information Sequence" },
   };
 }
 
@@ -825,7 +825,7 @@ function petIsotopeModulePolicy(): IPolicy {
   return {
     "00540016": {
       action: "remove",
-      description: "Radiopharmaceuitical Information Sequence",
+      description: "Radiopharmaceutical Information Sequence",
     },
   };
 }
