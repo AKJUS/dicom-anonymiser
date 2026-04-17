@@ -150,7 +150,7 @@ function broadlySafeFieldsPolicy(): IPolicy {
     "00189323": {action: "keep", description: "Exposure Modulation Type"},
     "00189324": {action: "keep", description: "Estimated Dose Saving"},
     "00189345": {action: "keep", description: "CTDIvol"},
-    "00189346": {action: "keep", description: "CTDI Phantom Type Code Sequence"},
+    "00189346": {action: "remove", description: "CTDI Phantom Type Code Sequence"},
     "00189559": {action: "keep", description: "Positioner Primary Angle Direction"},
     "00200011": {action: "keep", description: "Series Number"},
     "00200012": {action: "keep", description: "Acquisition number"},
@@ -170,11 +170,11 @@ function broadlySafeFieldsPolicy(): IPolicy {
     "00281055": {action: "keep", description: "Window Center & Width Explanation"},
     "00281300": {action: "keep", description: "Breast Implant Present"},
     "00400301": {action: "keep", description: "Total Number of Exposures"},
-    "0040030E": {action: "keep", description: "Exposure Dose Sequence"},
+    "0040030E": {action: "remove", description: "Exposure Dose Sequence"},
     "00400314": {action: "keep", description: "Half Value Layer"},
     "00400316": {action: "keep", description: "Organ Dose"},
     "00408302": {action: "keep", description: "Entrance Dose in mGy"},
-    "00540220": {action: "keep", description: "View Code Sequence"},
+    "00540220": {action: "remove", description: "View Code Sequence"},
     "00180010": {action: "keep", description: "Contrast/Bolus Agent"},
     "00189352": {action: "keep", description: "Calcium Scoring Mass Factor Device"},
     "00181048": {action: "keep", description: "Contrast/Bolus Ingredient"},
@@ -183,7 +183,7 @@ function broadlySafeFieldsPolicy(): IPolicy {
     "00187006": {action: "keep", description: "Detector Description"},
     "00281056": {action: "keep", description: "VOI LUT Function"},
     "00286010": {action: "keep", description: "Representative Frame Number"},
-    "00400275": {action: "keep", description: "Request Attributes Sequence"},
+    "00400275": {action: "remove", description: "Request Attributes Sequence"},
     "0008103E": {action: "keep", description: "Series Description"}, // Not patient specific, I checked with Frank.
   }
 }
@@ -202,7 +202,7 @@ function dxAnatomyImagedModulePolicy(): IPolicy {
   return {
     "00200062": { action: "keep", description: "Image Laterality" },
     "00082218": {
-      action: "keep",
+      action: "remove",
       description: "Anatomic Region Sequence.",
     },
   };
@@ -613,7 +613,7 @@ function mrSpectroscopyModulePolicy(): IPolicy {
     "00189098": { action: "keep", description: "Transmitter Frequency" },
     "00189052": { action: "keep", description: "Spectral Width" },
     "00189053": { action: "keep", description: "Chemical Shift Reference" },
-    "00189126": { action: "keep", description: "Volume Localization Sequence" },
+    "00189126": { action: "remove", description: "Volume Localization Sequence" },
     "00189059": { action: "keep", description: "Decoupling" },
     "00189060": { action: "keep", description: "Decoupled Nucleus" },
     "00189061": { action: "keep", description: "Decoupled Frequency" },
@@ -779,15 +779,15 @@ function nmImageModulePolicy(): IPolicy {
 
 function nmIsotopeModulePolicy(): IPolicy {
   return {
-    "00540012": { action: "keep", description: "Scan Velocity" },
-    "00540016": { action: "keep", description: "Scan Length" },
+    "00540012": { action: "remove", description: "Scan Velocity" },
+    "00540016": { action: "remove", description: "Scan Length" },
   };
 }
 
 function nmDetectorModulePolicy(): IPolicy {
   return {
     "00540022": {
-      action: "keep",
+      action: "remove",
       description: "Detector Information Sequence",
     },
   };
@@ -824,7 +824,7 @@ function petSeriesModulePolicy(): IPolicy {
 function petIsotopeModulePolicy(): IPolicy {
   return {
     "00540016": {
-      action: "keep",
+      action: "remove",
       description: "Radiopharmaceuitical Information Sequence",
     },
   };
