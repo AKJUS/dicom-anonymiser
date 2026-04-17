@@ -407,7 +407,7 @@ function mammographySeriesModulePolicy(): IPolicy {
 function mammographyImageModulePolicy(): IPolicy {
   return {
     "00080008": { action: "keep", description: "Image Type" },
-    "00081508": { action: "keep", description: "PositionerType" },
+    "00181508": { action: "keep", description: "PositionerType" },
     "00200062": { action: "keep", description: "ImageLaterality" },
     "00400318": { action: "keep", description: "OrganExposed" },
     // AnatomicRegionSequence is mandatory but fairly complicated. Will remove for now...
